@@ -1,23 +1,39 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, World!</h1>
-			<p>
-				TODO: なんかいい感じのサイトの説明を書く
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <img src="/DSCF7360.JPG" />
+      <h1>About Me</h1>
+      <p>
+        神戸紀人(かんべ のりひと)<br />
+        神奈川県在住の2年目エンジニア。PythonとTypeScriptをよく書いています。<br />
+        趣味は邦ロックと最近カメラを少々。
+      </p>
+
+      <h5>来歴</h5>
+      - 2022/03 豊田工業高等専門学校 情報科学専攻 卒業<br />
+      - 2022/04 富士通クラウドテクノロジーズ株式会社 入社
+
+      <h5>資格</h5>
+      - 基本情報技術者<br />
+      - 情報セキュリティマネジメント<br />
+      - 普通自動車第一種運転免許
+	  <h5>SNS</h5>
+	  - <a href="https://www.wantedly.com/id/norikmb">Wantedly</a><br />
+	  - <a href="https://www.linkedin.com/in/norikmb">Linkedin</a><br />
+	  - <a href="https://www.facebook.com/profile.php?id=100012667274761">Facebook</a><br />
+    </main>
+    <Footer />
+  </body>
 </html>
