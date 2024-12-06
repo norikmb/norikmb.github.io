@@ -1,0 +1,8 @@
+---
+const referrer = Astro.request.referrer || ""; // 空文字列で初期化（リファラーがない場合）
+---
+
+<div>
+  <text>リファラーに基づくコンテンツのテスト</text>
+  <p>{referrer}</p>
+</div>
