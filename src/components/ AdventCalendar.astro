@@ -1,8 +1,8 @@
 ---
-const referrer = document.referrer;
+const referer = Astro.request.headers.get("referer");
 ---
 
 <div>
   <h1>以下にリファラーを表示</h1>
-  <p>{referrer}</p>
+  <p>{referer}</p>
 </div>
