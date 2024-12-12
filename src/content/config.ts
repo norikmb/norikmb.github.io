@@ -10,7 +10,7 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     heroImage: z.string().default("/blog/no_image_logo.png"),
-    isAdventCalendar: z.boolean().default(false),
+    isAdventCalendar2024: z.boolean().default(false),
   }),
 });
 

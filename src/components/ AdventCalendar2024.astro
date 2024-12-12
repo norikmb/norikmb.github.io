@@ -1,0 +1,31 @@
+---
+
+---
+
+<div>
+  <h2>
+    この記事は <span id="advent-calendar"></span>の
+    <span id="day"></span>日目の記事です。
+  </h2>
+  <p>このページにアクセスした参照元: <span id="referrer"></span></p>
+
+  <script>
+    // document.referrerを取得
+    const referrer = document.referrer;
+    document.getElementById("referrer")!.innerText = referrer;
+
+    // 参照元URLが特定のURLであれば表示内容を変更
+    if (referrer.includes("https://qiita.com/")) {
+      document.getElementById("advent-calendar")!.innerHTML =
+        `<a href="https://qiita.com/advent-calendar/2024/fujitsu">Fujitsu Advent Calendar 2024</a>`;
+      document.getElementById("day")!.innerText = "13";
+    } else if (referrer.includes("https://adventar.org/")) {
+      document.getElementById("advent-calendar")!.innerHTML =
+        `<a href="https://adventar.org/calendars/11224">reffererテスト Advent Calendar 2024</a>`;
+      document.getElementById("day")!.innerText = "1";
+    } else {
+      document.getElementById("advent-calendar")!.innerHTML = `HogeHoge`;
+      document.getElementById("day")!.innerText = "N";
+    }
+  </script>
+</div>
