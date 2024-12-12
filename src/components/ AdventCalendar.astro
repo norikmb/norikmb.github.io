@@ -1,8 +1,26 @@
 ---
-const referer = Astro.request.headers.get("referer");
+
 ---
 
 <div>
-  <h1>以下にリファラーを表示</h1>
-  <p>{referer}</p>
+  <h1>この記事は <span id="advent-calendar"></span> の13日目の記事です。</h1>
+  <p>このページにアクセスした参照元: <span id="referrer"></span></p>
 </div>
+
+<script>
+  // document.referrerを取得
+  const referrer = document.referrer;
+  document.getElementById("referrer")!.innerText = referrer;
+
+  // 参照元URLが特定のURLであれば表示内容を変更
+  if (referrer.includes("https://qiita.com/")) {
+    document.getElementById("advent-calendar")!.innerText =
+      `<a href="https://qiita.com/advent-calendar/2024/fujitsu">Fujitsu Advent Calendar 2024</a>`;
+  } else if (referrer.includes("https://adventar.org/")) {
+    document.getElementById("advent-calendar")!.innerText =
+      `<a href="https://adventar.org/calendars/11224">reffererテスト Advent Calendar 2024</a>`;
+  } else {
+    document.getElementById("advent-calendar")!.innerText =
+      `Advent Calendar 2024`;
+  }
+</script>
