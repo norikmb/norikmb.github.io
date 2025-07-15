@@ -10,7 +10,7 @@ isAdventCalendar2024: true
 
 社内には複数のアドベントカレンダーが展開されています。パブリックなものから、社内限定の非公開なものまで様々です。
 
-そこで、１つの記事で複数のアドベントカレンダーを担うようにすることで、少ない労力で様々なコミニュティに投稿できるようになるのではないかと考えました。
+そこで、１つの記事で複数のアドベントカレンダーを担うようにすることで、少ない労力で様々なコミュニティに投稿できるようになるのではないかと考えました。
 
 ### What
 
@@ -18,7 +18,7 @@ isAdventCalendar2024: true
 
 どのアドベントカレンダーのページのリンクから移動したかは[`document.referrer`](https://developer.mozilla.org/ja/docs/Web/API/Document/referrer)で取得できます。
 
-このサイトは[Astro](https://astro.build/)で作成されています。そのため、クライアントサイドの情報を元に描画するには HTML の`<script>`タグを使用することで実現可能です。
+このサイトは[Astro](https://astro.build/)で作成されています。そのため、クライアントサイドの情報を元に描画するには HTML の`<script>`タグを使うことで実現可能です。
 
 - https://docs.astro.build/ja/guides/client-side-scripts/
 
@@ -52,8 +52,7 @@ isAdventCalendar2024: true
 </div>
 ```
 
-パブリックなものとして以下のアドベントカレンダーに登録してあるので、そこからこの記事に遷移することで記事１行目の文章が変わるようになるはずです
+パブリックなものとして以下のアドベントカレンダーに登録してあるので、そこからこの記事に遷移することで記事１行目の文章が変わるようになるはずです。
 
 - https://qiita.com/advent-calendar/2024/fujitsu
-
 - https://adventar.org/calendars/11224

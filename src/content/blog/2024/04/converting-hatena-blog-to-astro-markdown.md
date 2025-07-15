@@ -7,19 +7,19 @@ heroImage: "/blog/20240417.png"
 
 ### Why
 
-はてなブログで作成した過去の記事データを[Astro](https://astro.build/)を使用した個人のブログに移行したい。
+はてなブログで作成した過去の記事データをAstroを使った個人のブログに移行したい。
 
 ### What
 
-はてなブログの記事データは MT 形式の txt ファイルとして出力される。
+はてなブログの記事データはMT形式のtxtファイルとして出力される。
 
 - 参考: [記事データをエクスポート（バックアップ）する](https://help.hatenablog.com/entry/export)
 
-Astro の Blog テンプレートでは/src/content/blog 以下のマークダウン形式のファイルをページとして扱うことができる。
+AstroのBlogテンプレートでは/src/content/blog以下のマークダウン形式のファイルをページとして扱うことができる。
 
-- 参考:[Markdown と MDX](https://docs.astro.build/ja/guides/markdown-content/)
+- 参考: [Markdown と MDX](https://docs.astro.build/ja/guides/markdown-content/)
 
-エクスポートした hoge.export.txt ファイルを/src/content/blog 以下の.md ファイル群に変換する Python のスクリプトを作成した。
+エクスポートした hoge.export.txt ファイルを/src/content/blog以下の.mdファイル群に変換するPythonのスクリプトを作成した。
 
 ```py
 import os

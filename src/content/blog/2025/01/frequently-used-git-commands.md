@@ -7,7 +7,7 @@ heroImage: "/blog/20250120.png"
 
 ### Why
 
-[Git](https://git-scm.com/)のコマンドをすぐ忘れてよく調べるので備忘録
+Gitのコマンドをすぐ忘れてよく調べるので備忘録。
 
 ### What
 
@@ -22,7 +22,7 @@ sudo apt install tig
 - Git の履歴調べるときはだいたいこれ
 
 ```sh
-tig #確認終わったらqで閉じる
+tig # 確認終わったらqで閉じる
 ```
 
 #### よく調べる Git コマンド
@@ -36,8 +36,8 @@ tig #確認終わったらqで閉じる
 - リモートの変更を信用して強制的に pull する
 
   ```sh
-  $ git fetch origin [ブランチ名]
-  $ git reset --hard origin/[ブランチ名]
+  git fetch origin [ブランチ名]
+  git reset --hard origin/[ブランチ名]
   ```
 
 - 直前のコミットを取り消す
@@ -48,7 +48,7 @@ tig #確認終わったらqで閉じる
 
 - 切るブランチを間違えてコミットを積み重ねたのを修正する
 
-  - 例:まちがって master から切ってしまった feature/hoge ブランチを develop に移動する
+  - 例: 間違って master から切ってしまった feature/hoge ブランチを develop に移動する
 
     ```sh
     git rebase --onto develop master feature/hoge
@@ -73,5 +73,5 @@ tig #確認終わったらqで閉じる
   ```sh
   git rm -f [サブモジュール名]
   rm -rf .git/modules/[サブモジュール名]
-  git submodule add -b [ブランチ名] [リポジトリの URL] ./[サブモジュール名]
+  git submodule add -b [ブランチ名] [リポジトリのURL] ./[サブモジュール名]
   ```
