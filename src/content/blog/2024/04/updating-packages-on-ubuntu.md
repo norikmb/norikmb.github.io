@@ -7,25 +7,25 @@ heroImage: "/blog/20240405.png"
 
 ### Why
 
-Ubuntu は apt と呼ばれるパッケージ管理方法を用いている  
-そのためカーネルのバージョン管理も apt で行うことが可能
+Ubuntuはaptと呼ばれるパッケージ管理方法を用いている。  
+そのためカーネルのバージョン管理もaptで行うことが可能。
 
-[CVE-2024-1086](https://github.com/Notselwyn/CVE-2024-1086)が公開されていたので、個人の開発環境のカーネルのバージョンを確認した
+[CVE-2024-1086](https://github.com/Notselwyn/CVE-2024-1086)が公開されていたので、個人の開発環境のカーネルのバージョンを確認した。
 
 ```sh
-$ uname -r
+uname -r
 5.15.0-52-generic
 ```
 
-更新が必要そうなバージョンだった  
-[Ubuntu の公式](https://ubuntu.com/security/CVE-2024-1086)によると、5.15 系では 5.15.0-101 で修正バージョンがリリースされているらしい
+更新が必要そうなバージョンだった。  
+[Ubuntuの公式](https://ubuntu.com/security/CVE-2024-1086)によると、5.15系では5.15.0-101で修正版がリリースされているらしい。
 
 ### What
 
-Ubuntu でのパッケージを更新していく
+Ubuntuでのパッケージを更新していく。
 
-カーネル類は/boot に実態がある  
-更新前に/boot の容量を確認して十分な空き容量があるか確認する
+カーネル類は/bootに実体がある。  
+更新前に/bootの容量を確認して十分な空き容量があるか確認する。
 
 ```sh
 df -h
@@ -38,20 +38,20 @@ tmpfs           5.0M     0  5.0M   0% /run/lock
 tmpfs           389M  4.0K  389M   1% /run/user/1000
 ```
 
-空き容量確保のため必要ないパッケージを削除しておく
+空き容量確保のため不要なパッケージを削除しておく。
 
 ```sh
 sudo apt autoremove -y
 ```
 
-カーネルと合わせて他のパッケージも更新する
+カーネルと合わせて他のパッケージも更新する。
 
 ```sh
 sudo apt update
 sudo apt upgrade -y
 ```
 
-必要ないパッケージを削除する
+不要なパッケージを削除する。
 
 ```sh
 sudo apt autoremove -y
@@ -64,9 +64,9 @@ sudo apt autoclean -y
 sudo reboot
 ```
 
-脆弱性対応済みバージョンに更新できた
+脆弱性対応済みバージョンに更新できた。
 
 ```sh
-$ uname -r
+uname -r
 5.15.0-101-generic
 ```
