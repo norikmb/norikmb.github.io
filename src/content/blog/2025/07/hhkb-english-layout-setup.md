@@ -51,4 +51,4 @@ Windowsキーが欲しいのでキーの再マップをクリックし、以下�
 | -------- | ---------- |
 | Ctrl + Space | VK 243 |
 
-参考：https://kts.sakaiweb.com/virtualkeycodes.htm
+参考：https://kts.sakaiweb.com/virtualkeycodes.html
