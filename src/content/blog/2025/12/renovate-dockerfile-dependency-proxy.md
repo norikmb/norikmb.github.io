@@ -56,9 +56,9 @@ Renovate は Dependency Proxy を含む文字列全体を「レジストリ/イ�
   },
   "regexManagers": [
     {
-      "fileMatch": ["(^|/)Dockerfile[^/]*$"],
+      "fileMatch": ["/(^|/|\\.)Dockerfile$/"],
       "matchStrings": [
-        "FROM \\\$\\\{?CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX\\\}?/?(?<depName>.*?):(?<currentValue>.*?)\\s"
+        "FROM \\/$\\/{?CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX\\/}?/?(?<depName>.*?):(?<currentValue>.*?)\\s"
       ],
       "datasourceTemplate": "docker"
     }
@@ -72,6 +72,12 @@ Renovate は Dependency Proxy を含む文字列全体を「レジストリ/イ�
   - `currentValue`: 現在のタグ
   - `datasourceTemplate: docker`: Docker イメージとしてバージョン取得・更新提案を行う指定
 - `registryAliases`: 実ビルド時は Dependency Proxy を使い続けつつ、Renovate の解決時は別リポジトリ（ここでは `mirror.gcr.io`）を参照させる
+
+また、今回の調査で初めて知ったのですが、Dockerfile の命名規則は <something>.Dockerfile が公式だそうです。
+
+> Some projects may need distinct Dockerfiles for specific purposes. A common convention is to name these <something>.Dockerfile.
+
+参考: https://docs.docker.com/build/concepts/dockerfile/#filename
 
 ## まとめ
 GitLab の Dependency Proxy を利用した Dockerfile を Renovate で正しく更新するには、`regexManagers` と `registryAliases` を組み合わせて設定する必要がありました。  
