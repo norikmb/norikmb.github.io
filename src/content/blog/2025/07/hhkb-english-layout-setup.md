@@ -1,13 +1,14 @@
 ---
-title: "HHKB 英語配列の設定"
-description: ""
-pubDate: "Jul 16 2025"
-heroImage: "/blog/20250716.png"
+title: 'HHKB 英語配列の設定'
+description: ''
+pubDate: 'Jul 16 2025'
+heroImage: '/blog/20250716.png'
 ---
 
 ### Why
 
-普段日本語配列のキーボードを使っていましたが、英語配列を使ってみたくなったので、HHKB Professional HYBRID 英語配列／墨を購入しました。
+普段日本語配列のキーボードを使っていましたが、英語配列を使ってみたくなったので、HHKB Professional
+HYBRID 英語配列／墨を購入しました。
 
 Windows での設定方法をまとめておきます。
 
@@ -37,18 +38,19 @@ DeleteよりもBackspaceをよく使うため、ツールを起動し、以下�
 
 #### PowerToys の Keyboard Manager で変更する
 
-Microsoft Store から [PowerToys](https://apps.microsoft.com/detail/xp89dcgq3k6vld?hl=ja-JP&gl=JP) をインストールし、Keyboard Manager を有効にします。
+Microsoft Store から [PowerToys](https://apps.microsoft.com/detail/xp89dcgq3k6vld?hl=ja-JP&gl=JP)
+をインストールし、Keyboard Manager を有効にします。
 
 Windowsキーが欲しいのでキーの再マップをクリックし、以下のように設定します。
 
 | 元のキー | 新しいキー |
 | -------- | ---------- |
-| VK 235   | Win (Left)  |
+| VK 235   | Win (Left) |
 
 「半角/全角」キーが欲しいので、ショートカットの再マップをクリックし、以下のように設定します。
 
-| 元のキー | 新しいキー |
-| -------- | ---------- |
-| Ctrl + Space | VK 243 |
+| 元のキー     | 新しいキー |
+| ------------ | ---------- |
+| Ctrl + Space | VK 243     |
 
 参考：https://kts.sakaiweb.com/virtualkeycodes.html

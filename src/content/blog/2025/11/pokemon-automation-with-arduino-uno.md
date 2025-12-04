@@ -1,8 +1,8 @@
 ---
 title: 'Arduino Uno でポケモンZAの作業を自動化する'
 description: 'Arduino Uno を使ってポケモンZAの作業を自動化する方法を紹介します'
-pubDate: "Sep 08 2025"
-heroImage: "/blog/20251108.png"
+pubDate: 'Sep 08 2025'
+heroImage: '/blog/20251108.png'
 ---
 
 ## はじめに
@@ -10,7 +10,8 @@ heroImage: "/blog/20251108.png"
 ポケモンZAではモミジリサーチにおいてトレーナー戦で1000勝する必要があります。  
 退屈なことは自動化しましょう。  
 世の中では連射コントローラーなどを使って自動化する方法が広まっていますが、今回は Arduino Uno を使った自動化を行いました。  
-Arduino Uno を使った自動化の方法は剣盾時代から存在しており、すでに多くの情報がネット上にありますが、2025年11月現在でも実施可能でしたので備忘録的に残しておきます。  
+Arduino
+Uno を使った自動化の方法は剣盾時代から存在しており、すでに多くの情報がネット上にありますが、2025年11月現在でも実施可能でしたので備忘録的に残しておきます。  
 今回は剣盾環境初期に流行ったポッ拳コントローラーを詐称した自動化を試しましたが、最近はプロコンを詐称した自動化が主流みたいです。時代の流れは速いですね。
 
 ## 使ったもの
@@ -24,10 +25,10 @@ Arduino Uno を使った自動化の方法は剣盾時代から存在してお�
 1. USBケーブルをPCに接続します。
 2. ジャンパーワイヤーなどで、リセットピンとグランドを一時的に接続し16u2をリセットします。
     - ピンはUSBコネクタの近くにあります。参考写真は公式サイト参考
-   ![Arduino Uno 16u2 Reset Pin](https://docs.arduino.cc/static/839844facc52bdd7f609eb22c0d428bf/53639/Uno-front-DFU-reset.png)
+      ![Arduino Uno 16u2 Reset Pin](https://docs.arduino.cc/static/839844facc52bdd7f609eb22c0d428bf/53639/Uno-front-DFU-reset.png)
 3. デバイスマネージャーを開き、 不明なデバイスが認識されていることを確認します。
 4. dfu-programmerをDLして展開します。0.9.0まではWindows版が提供されていました。
-     - https://github.com/dfu-programmer/dfu-programmer/releases/download/v0.9.0/dfu-programmer-win-0.9.0.zip
+    - https://github.com/dfu-programmer/dfu-programmer/releases/download/v0.9.0/dfu-programmer-win-0.9.0.zip
 
 5. デバイスマネージャーで「不明なデバイス」を選択し、ドライバーを更新します。
 
@@ -67,8 +68,8 @@ Arduino Uno を使った自動化の方法は剣盾時代から存在してお�
 
 ## 感想
 
-学生時代ぶりにArduino UNO を引っ張ってきて遊びました。このArduino UNO は中学生の時に大須の電気屋で買ったものなので思い出深いです。
-
+学生時代ぶりにArduino UNO を引っ張ってきて遊びました。このArduino
+UNO は中学生の時に大須の電気屋で買ったものなので思い出深いです。
 
 ## 参考文献・サイト
 

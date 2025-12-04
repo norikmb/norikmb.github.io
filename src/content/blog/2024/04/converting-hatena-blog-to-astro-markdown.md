@@ -1,8 +1,8 @@
 ---
-title: "はてなブログからエクスポートした記事をAstro Blog用のマークダウン形式に変換する"
-description: ""
-pubDate: "Apr 17 2024"
-heroImage: "/blog/20240417.png"
+title: 'はてなブログからエクスポートした記事をAstro Blog用のマークダウン形式に変換する'
+description: ''
+pubDate: 'Apr 17 2024'
+heroImage: '/blog/20240417.png'
 ---
 
 ### Why
