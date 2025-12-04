@@ -1,0 +1,21 @@
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  osv-scan:
+    name: Run OSV-Scanner
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run OSV-Scanner
+        uses: google/osv-scanner-action@v1
+        with:
+          scan-args: --lockfile package-lock.json
