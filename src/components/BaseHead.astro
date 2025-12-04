@@ -1,17 +1,25 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import "../styles/global.css";
+import '../styles/global.css';
 
 interface Props {
-  title: string;
-  description: string;
-  image?: string;
+	title: string;
+	description: string;
+	image?: string;
+	author?: string;
+	pubDate?: Date;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/ogimage.png" } = Astro.props;
+const {
+	title,
+	description,
+	image = '/ogimage.png',
+	author = 'Kambe',
+	pubDate,
+} = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -19,21 +27,22 @@ const { title, description, image = "/ogimage.png" } = Astro.props;
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 <meta name="generator" content={Astro.generator} />
+<meta name="author" content={author} />
 
 <!-- Font preloads -->
 <link
-  rel="preload"
-  href="/fonts/atkinson-regular.woff"
-  as="font"
-  type="font/woff"
-  crossorigin
+	rel="preload"
+	href="/fonts/atkinson-regular.woff"
+	as="font"
+	type="font/woff"
+	crossorigin
 />
 <link
-  rel="preload"
-  href="/fonts/atkinson-bold.woff"
-  as="font"
-  type="font/woff"
-  crossorigin
+	rel="preload"
+	href="/fonts/atkinson-bold.woff"
+	as="font"
+	type="font/woff"
+	crossorigin
 />
 
 <!-- Canonical URL -->
@@ -45,11 +54,12 @@ const { title, description, image = "/ogimage.png" } = Astro.props;
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content={pubDate ? 'article' : 'website'} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:site_name" content="Kambe Blog" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
@@ -57,3 +67,47 @@ const { title, description, image = "/ogimage.png" } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- JSON-LD Schema -->
+{
+	pubDate && (
+		<script type="application/ld+json">
+			{JSON.stringify({
+				'@context': 'https://schema.org',
+				'@type': 'BlogPosting',
+				headline: title,
+				description: description,
+				image: new URL(image, Astro.url).href,
+				datePublished: pubDate.toISOString(),
+				author: {
+					'@type': 'Person',
+					name: author,
+				},
+				publisher: {
+					'@type': 'Organization',
+					name: 'Kambe Blog',
+					logo: {
+						'@type': 'ImageObject',
+						url: new URL('/logo.png', Astro.url).href,
+					},
+				},
+			})}
+		</script>
+	)
+}
+
+{
+	!pubDate && (
+		<script type="application/ld+json">
+			{JSON.stringify({
+				'@context': 'https://schema.org',
+				'@type': 'WebPage',
+				name: title,
+				description: description,
+				url: Astro.url.href,
+				image: new URL(image, Astro.url).href,
+			})}
+		</script>
+	)
+}
+
