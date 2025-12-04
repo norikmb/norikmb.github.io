@@ -1,8 +1,8 @@
 ---
-title: "Ubuntuでパッケージを更新する"
-description: ""
-pubDate: "Apr 05 2024"
-heroImage: "/blog/20240405.png"
+title: 'Ubuntuでパッケージを更新する'
+description: ''
+pubDate: 'Apr 05 2024'
+heroImage: '/blog/20240405.png'
 ---
 
 ### Why

@@ -1,8 +1,8 @@
 ---
-title: "１つの記事で複数のアドベントカレンダーに投稿してみる"
-description: ""
-pubDate: "Dec 13 2024"
-heroImage: "/blog/20241213.png"
+title: '１つの記事で複数のアドベントカレンダーに投稿してみる'
+description: ''
+pubDate: 'Dec 13 2024'
+heroImage: '/blog/20241213.png'
 isAdventCalendar2024: true
 ---
 
