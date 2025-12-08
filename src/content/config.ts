@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 
 export const adventCalendarYears = ['2024', '2025'] as const;
-export type AdventCalendarYear = typeof adventCalendarYears[number];
+export type AdventCalendarYear = (typeof adventCalendarYears)[number];
 
 const blog = defineCollection({
 	type: 'content',
