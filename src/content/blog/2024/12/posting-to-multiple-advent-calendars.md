@@ -3,7 +3,7 @@ title: '１つの記事で複数のアドベントカレンダーに投稿して
 description: ''
 pubDate: 'Dec 13 2024'
 heroImage: '/blog/20241213.png'
-isAdventCalendar2024: true
+adventCalendarYear: '2024'
 ---
 
 ### Why
