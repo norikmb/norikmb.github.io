@@ -4,28 +4,16 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-import AdventCalendar2024 from '../components/AdventCalendar2024.astro';
+import AdventCalendar from '../components/AdventCalendar.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const {
-	title,
-	description,
-	pubDate,
-	updatedDate,
-	heroImage,
-	isAdventCalendar2024,
-} = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, adventCalendarYear } = Astro.props;
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead
-			title={title}
-			description={description}
-			image={heroImage}
-			pubDate={pubDate}
-		/>
+		<BaseHead title={title} description={description} image={heroImage} pubDate={pubDate} />
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -89,7 +77,7 @@ const {
 						<h1>{title}</h1>
 						<hr />
 					</div>
-					<div>{isAdventCalendar2024 && <AdventCalendar2024 />}</div>
+					{adventCalendarYear && <AdventCalendar year={adventCalendarYear} />}
 					<slot />
 				</div>
 			</article>
