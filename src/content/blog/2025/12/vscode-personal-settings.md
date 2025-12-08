@@ -12,6 +12,12 @@ adventCalendarYear: '2025'
 
 言語関連の設定はプロジェクト単位のLinterやFormatterに任せることが多いため、主にエディタ全般の設定に絞って紹介します。
 
+ついでに会社のアドベントカレンダーが埋まっていなかったので、この記事で埋めることにしました。
+
+アドベントカレンダーについては、昨年度の記事にもまとめているので、よければそちらもご覧ください。
+
+https://kambe.dev/blog/2024/12/posting-to-multiple-advent-calendars/
+
 ## Settings.json の内容
 
 VS Code の左下にある設定アイコンから、`Settings` を選択します。その後、右上のOpen Settings (JSON)` アイコンをクリックすると、設定ファイルが開きます。
