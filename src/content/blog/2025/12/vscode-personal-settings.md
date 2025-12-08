@@ -21,8 +21,8 @@ https://kambe.dev/blog/2024/12/posting-to-multiple-advent-calendars/
 
 ## Settings.json の内容
 
-VS Code の左下にある設定アイコンから、`Settings` を選択します。その後、右上のOpen Settings
-(JSON)` アイコンをクリックすると、設定ファイルが開きます。
+VS Code の左下にある設定アイコンから、`Settings` を選択します。その後、右上の `Open Settings (JSON)`
+アイコンをクリックすると、設定ファイルが開きます。
 
 ### フォント設定
 
