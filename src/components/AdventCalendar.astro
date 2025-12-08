@@ -1,88 +1,57 @@
 ---
 import type { AdventCalendarYear } from '../content/config';
+import { adventCalendarConfigs } from '../utils/adventCalendarConfig';
 
 interface Props {
 	year: AdventCalendarYear;
 }
 
-interface CalendarConfig {
-	referrerPatterns: { pattern: string; text: string; day: string }[];
-	defaultText: string;
-	defaultDay: string;
-}
-
-const configs: Record<AdventCalendarYear, CalendarConfig> = {
-	2024: {
-		referrerPatterns: [
-			{
-				pattern: 'https://qiita.com/',
-				text: '<a href="https://qiita.com/advent-calendar/2024/fujitsu">Fujitsu Advent Calendar 2024</a>',
-				day: '13',
-			},
-			{
-				pattern: 'https://adventar.org/',
-				text: '<a href="https://adventar.org/calendars/11224">refererテスト Advent Calendar 2024</a>',
-				day: '1',
-			},
-			{
-				pattern: 'https://fujitsu.sharepoint.com/',
-				text: '<a href="https://fujitsu.sharepoint.com/teams/xn--jp-lt-wt2h/SitePages/Advent-Calendar-2024.aspx">LT会AdventCalendar2024</a>',
-				day: '11',
-			},
-		],
-		defaultText: 'HogeHoge',
-		defaultDay: 'N',
-	},
-	2025: {
-		referrerPatterns: [
-			{
-				pattern: 'https://fujitsu.sharepoint.com/',
-				text: '<a href="https://fujitsu.sharepoint.com/teams/xn--jp-lt-wt2h/SitePages/Advent-Calendar-2025.aspx">LT会AdventCalendar2025</a>',
-				day: '7',
-			},
-			{
-				pattern: 'https://loop.cloud.microsoft/',
-				text: '<a href="https://fujitsu.sharepoint.com/teams/xn--jp-lt-wt2h/SitePages/Advent-Calendar-2025.aspx">LT会AdventCalendar2025</a>',
-				day: '7',
-			},
-		],
-		defaultText:
-			'<a href="https://qiita.com/advent-calendar/2025/fujitsu">FUJITSU Advent Calendar 2025</a>',
-		defaultDay: '7',
-	},
-};
-
 const { year } = Astro.props;
-const config = configs[year];
+const config = adventCalendarConfigs[year];
 
-// 参照元URLに基づいて、カレンダーと日付を決定
-function findCalendarInfo() {
-	const referrer = typeof document !== 'undefined' ? document.referrer : '';
-
-	for (const pattern of config.referrerPatterns) {
-		if (referrer.includes(pattern.pattern)) {
-			return {
-				text: pattern.text,
-				day: pattern.day,
-				referrer,
-			};
-		}
-	}
-
-	return {
-		text: config.defaultText,
-		day: config.defaultDay,
-		referrer,
-	};
-}
-
-const calendarInfo = findCalendarInfo();
+// デフォルト値を使用（サーバーサイドでは参照元は取得できない）
+const defaultCalendarInfo = {
+	text: config.defaultText,
+	day: config.defaultDay,
+};
 ---
 
 <div>
-	<h3>
-		この記事は <Fragment set:html={calendarInfo.text} />の
-		<span>{calendarInfo.day}</span>日目の記事です。
+	<h3 id="calendar-text">
+		この記事は <Fragment set:html={defaultCalendarInfo.text} />の
+		<span>{defaultCalendarInfo.day}</span>日目の記事です。
 	</h3>
-	<p>このページにアクセスした参照元: <span>{calendarInfo.referrer}</span></p>
+	<p>このページにアクセスした参照元: <span id="referrer"></span></p>
+
+	<script define:vars={{ config: JSON.stringify(config) }}>
+		const referrer = document.referrer;
+		const parsedConfig = JSON.parse(config);
+
+		// 参照元を表示
+		const referrerElement = document.getElementById('referrer');
+		if (referrerElement) {
+			referrerElement.innerText = referrer;
+		}
+
+		// 参照元に基づいてカレンダー情報を更新
+		function updateCalendarInfo() {
+			let calendarText = parsedConfig.defaultText;
+			let calendarDay = parsedConfig.defaultDay;
+
+			for (const pattern of parsedConfig.referrerPatterns) {
+				if (referrer.includes(pattern.pattern)) {
+					calendarText = pattern.text;
+					calendarDay = pattern.day;
+					break;
+				}
+			}
+
+			const calendarElement = document.getElementById('calendar-text');
+			if (calendarElement) {
+				calendarElement.innerHTML = `この記事は ${calendarText}の<span>${calendarDay}</span>日目の記事です。`;
+			}
+		}
+
+		updateCalendarInfo();
+	</script>
 </div>
