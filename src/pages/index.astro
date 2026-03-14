@@ -1,43 +1,78 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { Image } from 'astro:assets';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import profileImage from '../assets/DSCF7360.jpg';
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <img src="/DSCF7360.jpg" />
-      <h1>About Me</h1>
-      <p>
-        かんべ(@norikmb)<br />
-        神奈川県在住の4年目エンジニア。<br />
-        PythonとTypeScriptをたまに書いています。<br />
-        趣味は邦ロックと散歩。あとたまに写真を撮ること。<br />
-        好きな食べ物は牡蠣とプリン。
-      </p>
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.profile-image {
+				text-align: center;
+				margin-bottom: 1.5rem;
+			}
+			.profile-image img {
+				border-radius: 12px;
+				box-shadow: var(--box-shadow);
+			}
+			.about-list {
+				list-style: disc;
+				padding-left: 1.5em;
+				margin-bottom: 1.5em;
+			}
+			.about-list li {
+				margin-bottom: 0.3em;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="profile-image">
+				<Image
+					src={profileImage}
+					alt="かんべのプロフィール写真"
+					width={480}
+					format="webp"
+				/>
+			</div>
+			<h1>About Me</h1>
+			<p>
+				かんべ(@norikmb)<br />
+				神奈川県在住の4年目エンジニア。<br />
+				PythonとTypeScriptをたまに書いています。<br />
+				趣味は邦ロックと散歩。あとたまに写真を撮ること。<br />
+				好きな食べ物は牡蠣とプリン。
+			</p>
 
-      <h5>来歴</h5>
-      - 2022/03 豊田工業高等専門学校 情報科学専攻 卒業<br />
-      - 2022/04 富士通クラウドテクノロジーズ株式会社 入社<br />
-      - 2024/04 吸収合併のため富士通株式会社に転籍<br />
+			<h5>来歴</h5>
+			<ul class="about-list">
+				<li>2022/03 豊田工業高等専門学校 情報科学専攻 卒業</li>
+				<li>2022/04 富士通クラウドテクノロジーズ株式会社 入社</li>
+				<li>2024/04 吸収合併のため富士通株式会社に転籍</li>
+			</ul>
 
-      <h5>資格</h5>
-      - 基本情報技術者<br />
-      - 情報セキュリティマネジメント<br />
-      - AWS Certified Cloud Practitioner<br />
-      - AWS Certified Solutions Architect - Associate<br />
-      <h5>SNS</h5>
-      - <a href="https://www.wantedly.com/id/norikmb">Wantedly</a><br />
-      - <a href="https://www.linkedin.com/in/norikmb">Linkedin</a><br />
-      - <a href="https://x.com/norikmb">X(旧Twitter)</a><br />
-    </main>
-    <Footer />
-  </body>
+			<h5>資格</h5>
+			<ul class="about-list">
+				<li>基本情報技術者</li>
+				<li>情報セキュリティマネジメント</li>
+				<li>AWS Certified Cloud Practitioner</li>
+				<li>AWS Certified Solutions Architect - Associate</li>
+				<li>AWS Certified Solutions Architect - Professional</li>
+			</ul>
+
+			<h5>SNS</h5>
+			<ul class="about-list">
+				<li><a href="https://www.wantedly.com/id/norikmb">Wantedly</a></li>
+				<li><a href="https://www.linkedin.com/in/norikmb">Linkedin</a></li>
+				<li><a href="https://x.com/norikmb">X(旧Twitter)</a></li>
+			</ul>
+		</main>
+		<Footer />
+	</body>
 </html>
