@@ -18,24 +18,24 @@
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.4.1",
-		"@astrojs/mdx": "^4.3.12",
-		"@astrojs/rss": "^4.0.14",
-		"@astrojs/sitemap": "^3.6.0",
+		"@astrojs/mdx": "^4.3.14",
+		"@astrojs/rss": "^4.0.18",
+		"@astrojs/sitemap": "^3.7.2",
 		"@astrojs/tailwind": "^6.0.2",
-		"astro": "^5.16.4",
+		"astro": "^5.18.1",
 		"sharp": "^0.34.5",
 		"typescript": "^5.9.3"
 	},
 	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "^8.48.1",
-		"@typescript-eslint/parser": "^8.48.1",
-		"@vitest/ui": "^4.0.15",
-		"astro-eslint-parser": "^1.2.2",
-		"eslint": "^9.39.1",
+		"@typescript-eslint/eslint-plugin": "^8.58.0",
+		"@typescript-eslint/parser": "^8.58.0",
+		"@vitest/ui": "^4.1.2",
+		"astro-eslint-parser": "^1.4.0",
+		"eslint": "^9.39.4",
 		"eslint-config-prettier": "^10.1.8",
-		"eslint-plugin-astro": "^1.5.0",
-		"happy-dom": "^20.0.11",
-		"prettier": "^3.7.4",
-		"vitest": "^4.0.15"
+		"eslint-plugin-astro": "^1.6.0",
+		"happy-dom": "^20.8.9",
+		"prettier": "^3.8.1",
+		"vitest": "^4.1.2"
 	}
 }
