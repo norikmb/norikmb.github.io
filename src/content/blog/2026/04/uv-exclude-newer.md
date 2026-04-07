@@ -51,7 +51,7 @@ exclude-newer-package = { my-private-lib = false }
 また、GitLab 側でも PEP 700 準拠の JSON
 API サポートが Issue として起票されています。（[gitlab#581770](https://gitlab.com/gitlab-org/gitlab/-/work_items/581770)）GitLab のUI上では、パッケージのアップロード日時は表示されており、データ自体は存在しているようなので、API 対応が進めば、この問題は解消されるのではないかと思います。
 
-## 参考
+### 参考
 
 - [サプライチェーン攻撃から身を守るために最低限設定しておきたいこと](https://zenn.dev/dely_jp/articles/supply-chain-kowai)
 - [uv - Dependency cooldowns](https://docs.astral.sh/uv/concepts/resolution/#dependency-cooldowns)
