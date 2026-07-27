@@ -45,7 +45,6 @@ heroImage: '/blog/20260518.png'
 
 https://listen.style/p/kankodori-radio/pq4zmewg
 
-
 ### 名古屋観光
 
 愛知県に戻るときは普段は実家に帰るので、名古屋駅周辺のホテルに泊まるのは初めてでした。名古屋観光も堪能できてよかったです。
