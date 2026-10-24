@@ -1,10 +1,15 @@
-import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
 
 export const adventCalendarYears = ['2024', '2025'] as const;
 export type AdventCalendarYear = (typeof adventCalendarYears)[number];
 
 const blog = defineCollection({
-	type: 'content',
+	loader: glob({
+		base: './src/content/blog',
+		pattern: '**/*.{md,mdx}',
+	}),
 	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),
