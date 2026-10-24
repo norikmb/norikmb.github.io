@@ -1,4 +1,4 @@
-import type { AdventCalendarYear } from '../content/config';
+import type { AdventCalendarYear } from '../content.config';
 
 export interface ReferrerPattern {
 	pattern: string;

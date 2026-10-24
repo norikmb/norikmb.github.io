@@ -1,29 +1,22 @@
 ---
 title:
     'GitLabのパッケージレジストリやコンテナレジストリを利用時に Renovate の minimumReleaseAge
-    を正しく判定させるための注意点'
+    を正しく判定させる'
 description:
-    'Renovate
-    でパッケージレジストリやコンテナレジストリを扱う際に気をつけたいポイントと、minimumReleaseAge
-    が判定不能になるケースについてまとめます'
+    'Renovateでパッケージレジストリやコンテナレジストリを扱う際に気をつけるポイントをまとめます。'
 pubDate: 'Jul 27 2026'
-heroImage: '/blog/no_image_logo.png'
+heroImage: '/blog/20260727.png'
 ---
 
 ## はじめに
 
-Renovate は依存関係の更新を自動化するうえで非常に便利です。特に、`minimumReleaseAge`
-を使って「新しいバージョンが出てから一定期間は待つ」という制御をすることで、サプライチェーン攻撃を抑制することができます。
+Renovate では、`minimumReleaseAge` を使って「新しいバージョンが出てから一定期間は待つ」という制御をすることで、サプライチェーン攻撃を抑制することができます。
 
-ただし、GitLab の
-[パッケージレジストリ](https://docs.gitlab.com/ja-jp/user/packages/package_registry/) や
-[コンテナレジストリ](https://docs.gitlab.com/ja-jp/user/packages/container_registry/)
-を利用していると「リリース時刻が取得できないため、`minimumReleaseAge`
-の判定ができない」というケースについて整理します。
+ただし、GitLab の[パッケージレジストリ](https://docs.gitlab.com/ja-jp/user/packages/package_registry/) や[コンテナレジストリ](https://docs.gitlab.com/ja-jp/user/packages/container_registry/)ではリリース時刻のメタ情報を付与していないため、`minimumReleaseAge` が正しく評価されません。
 
 ## 解決策
 
-以下のような構成を考えてみます。
+自分で作成したプライベートなパッケージや Docker イメージについては、対象のパッケージに対して `minimumReleaseAge` を `0 days` として扱うことで、リリース時刻が取得できない問題を回避できます。実際に作成した Renovate の設定例は以下の通りです。
 
 ```js
 module.exports = {
@@ -62,21 +55,9 @@ module.exports = {
 };
 ```
 
-この例では、GitLabのパッケージレジストリやコンテナレジストリから取得した Docker イメージと、Python パッケージについて、`minimumReleaseAge`
-を `0 days` として扱うことで、リリース時刻が取得できない問題を回避しています。
-
 ## 依存関係がある場合の注意点
 
-利用するパッケージレジストリに依存関係がある場合は注意が必要です。
-
-例えば、`my-private-lib`
-内の Python のパッケージがある場合、そのパッケージが依存している別のパッケージの更新があった場合、Renovate はそれらを、GitLabのパッケージレジストリやコンテナレジストリのキャッシュから取得したリリース時刻をもとに、`minimumReleaseAge`
+例えば、`my-private-lib`内の Python のパッケージがある場合、そのパッケージが依存している別のパッケージの更新があった場合、Renovate はそれらを、GitLabのパッケージレジストリやコンテナレジストリのキャッシュから取得したリリース時刻をもとに、`minimumReleaseAge`
 の判定を行います。その結果、親子関係にある更新候補が一緒に扱われ、期待した通りの制御ができないことがあります。
 
-## まとめ
-
-Renovate は強力ですが、プライベート GitLab レジストリや Docker レジストリを使う場合には、ハマりポイントが多数あります
-
-特に、リリース時刻が取得できない環境では、`minimumReleaseAge`
-が正しく評価できないことがあります。そのため、対象パッケージを明示的に `0 days`
-とし、`allowedVersions` を指定するなど、運用側での調整が必要です。
+そのため、スクリプト等で、先に`my-private-lib` 内の Python のパッケージ一覧と番号を取得し、そのバージョンに合わせて動的に Renovate の設定を生成するなどの工夫が必要になる場合があります。

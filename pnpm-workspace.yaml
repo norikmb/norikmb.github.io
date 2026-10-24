@@ -1,1 +1,6 @@
+allowBuilds:
+    esbuild: true
+    sharp: true
 minimumReleaseAge: 10080
+overrides:
+    esbuild: '>=0.28.1'
