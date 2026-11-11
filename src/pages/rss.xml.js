@@ -14,6 +14,7 @@ export async function GET(context) {
 		customData: `<atom:link href="${new URL('/rss.xml', context.site)}" rel="self" type="application/rss+xml" />`,
 		items: posts.map((post) => ({
 			...post.data,
+			description: post.data.description || post.data.title,
 			link: `/blog/${post.id}/`,
 		})),
 	});

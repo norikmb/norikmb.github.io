@@ -1,6 +1,8 @@
 ---
 title: 'GitHub Remote Tunnelsを使ってみる'
-description: ''
+description:
+    'GitHub認証で開発環境へ接続できるRemote
+    Tunnelsを、サーバー上でセットアップして利用する方法を紹介します。'
 pubDate: 'Apr 09 2025'
 heroImage: '/blog/20250409.png'
 ---

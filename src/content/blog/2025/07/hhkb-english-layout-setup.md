@@ -1,6 +1,6 @@
 ---
 title: 'HHKB 英語配列の設定'
-description: ''
+description: 'HHKB英語配列をWindowsで使うための設定と、公式ツールやPowerToysを使ったキーの割り当て方法を紹介します。'
 pubDate: 'Jul 16 2025'
 heroImage: '/blog/20250716.png'
 ---
