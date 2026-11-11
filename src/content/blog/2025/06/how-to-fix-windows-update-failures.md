@@ -1,6 +1,7 @@
 ---
 title: 'Windows Update が失敗する際の解決方法'
-description: 'Windows Updateが失敗した際に試した修復方法と、PCのリセットで解決した経緯をまとめます。'
+description:
+    'Windows Updateが失敗した際に試した修復方法と、PCのリセットで解決した経緯をまとめます。'
 pubDate: 'Jun 30 2025'
 heroImage: '/blog/20250630.png'
 ---
