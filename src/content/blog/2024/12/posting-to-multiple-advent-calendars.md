@@ -1,6 +1,6 @@
 ---
 title: '１つの記事で複数のアドベントカレンダーに投稿してみる'
-description: ''
+description: 'document.referrerを使い、1つの記事を複数のアドベントカレンダーからのアクセスに応じて表示する方法を紹介します。'
 pubDate: 'Dec 13 2024'
 heroImage: '/blog/20241213.png'
 adventCalendarYear: '2024'

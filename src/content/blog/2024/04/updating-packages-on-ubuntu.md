@@ -1,6 +1,6 @@
 ---
 title: 'Ubuntuでパッケージを更新する'
-description: ''
+description: 'Ubuntuで不要なパッケージを整理し、aptを使ってカーネルを含むパッケージを更新する手順を紹介します。'
 pubDate: 'Apr 05 2024'
 heroImage: '/blog/20240405.png'
 ---

@@ -1,6 +1,6 @@
 ---
 title: 'はてなブログからエクスポートした記事をAstro Blog用のマークダウン形式に変換する'
-description: ''
+description: 'はてなブログのエクスポートデータを、PythonでAstro Blog用のMarkdownファイルに変換する方法を紹介します。'
 pubDate: 'Apr 17 2024'
 heroImage: '/blog/20240417.png'
 ---

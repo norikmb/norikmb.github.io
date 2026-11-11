@@ -1,6 +1,6 @@
 ---
 title: 'YAPC::Hiroshima2024に参加した話'
-description: ''
+description: 'YAPC::Hiroshima2024に参加した感想や、キーノート・懇親会の思い出を紹介します。'
 pubDate: 'Feb 12 2024'
 heroImage: '/blog/20240212.png'
 ---

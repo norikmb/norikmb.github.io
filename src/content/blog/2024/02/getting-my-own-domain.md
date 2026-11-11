@@ -1,6 +1,6 @@
 ---
 title: '個人のドメインを取得した話'
-description: ''
+description: '個人のドメインを持つことを勧められたのをきっかけに、ドメインを取得した話です。'
 pubDate: 'Feb 02 2024'
 heroImage: '/blog/20240202.png'
 ---

@@ -1,6 +1,6 @@
 ---
 title: 'よく調べる Git コマンド'
-description: ''
+description: 'tigの使い方や、rebase・コミットの取り消し・submoduleの更新など、よく調べるGitコマンドをまとめます。'
 pubDate: 'Jan 20 2025'
 heroImage: '/blog/20250120.png'
 ---
