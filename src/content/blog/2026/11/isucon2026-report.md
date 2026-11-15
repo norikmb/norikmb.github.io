@@ -2,7 +2,7 @@
 title: 'ISUCON2026に参加しました'
 description: 'ISUCON2026にチームかんべで参加したレポートです。じゃがりこジェノベーゼピザ味が美味しかったです。'
 pubDate: 'Nov 08 2026'
-heroImage: '/blog/20271108.png'
+heroImage: '/blog/20261108.png'
 ---
 
 ## はじめに

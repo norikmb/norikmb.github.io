@@ -4,6 +4,7 @@ description:
     'コミットメッセージ生成で promptFiltered が発生する事例を紹介し、LiteLLM
     のカスタムエンドポイントを VS Code の utility model に設定する方法をまとめます。'
 pubDate: 'Nov 11 2026'
+heroImage: '/blog/20261115.png'
 ---
 
 ## はじめに
