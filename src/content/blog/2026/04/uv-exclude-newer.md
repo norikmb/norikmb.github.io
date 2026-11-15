@@ -36,7 +36,7 @@ API 自体が未サポートです。（[gitlab#581770](https://gitlab.com/gitla
 
 GitLab Package
 Registry は基本的には独自に管理されているプライベートなレジストリだと思うので、`exclude-newer`
-の対象外にしてしまっても問題ないケースが多と思います。
+の対象外にしてしまっても問題ないケースが多いと思います。
 
 ```toml
 [tool.uv]

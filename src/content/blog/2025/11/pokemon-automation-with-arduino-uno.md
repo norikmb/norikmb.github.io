@@ -1,7 +1,7 @@
 ---
 title: 'Arduino Uno でポケモンZAの作業を自動化する'
 description: 'Arduino Uno を使ってポケモンZAの作業を自動化する方法を紹介します'
-pubDate: 'Sep 08 2025'
+pubDate: 'Nov 08 2025'
 heroImage: '/blog/20251108.png'
 ---
 

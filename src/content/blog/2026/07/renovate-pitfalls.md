@@ -1,6 +1,6 @@
 ---
 title:
-    'GitLabのパッケージレジストリやコンテナレジストリを利用時に Renovate の minimumReleaseAge
+    'GitLabのパッケージレジストリやコンテナレジストリを利用する際に Renovate の minimumReleaseAge
     を正しく判定させる'
 description: 'Renovateでパッケージレジストリやコンテナレジストリを扱う際に気をつけるポイントをまとめます。'
 pubDate: 'Jul 27 2026'

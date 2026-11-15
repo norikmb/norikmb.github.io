@@ -25,7 +25,7 @@ Tunnels は GitHub の認証を用いてサーバー上の開発環境にリモ�
 1. curl でファイルを持ってくる
 
     ```shell
-    kambe@ubuntu:~$ curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output vscode_cli.tar.gz
+    kambe@ubuntu:~$ curl -L 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output vscode_cli.tar.gz
 
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                     Dload  Upload   Total   Spent    Left  Speed
@@ -42,8 +42,6 @@ Tunnels は GitHub の認証を用いてサーバー上の開発環境にリモ�
 1. /usr/local/bin/ に移動させる
 
     ```shell
-    kambe@ubuntu:~$ rm /usr/local/bin/code
-    rm: cannot remove '/usr/local/bin/code': No such file or directory
     kambe@ubuntu:~$ sudo mv code /usr/local/bin/code
     ```
 
